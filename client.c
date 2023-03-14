@@ -1,8 +1,7 @@
-/*
- * Auth: Danny Brokke (dbrokke@unomaha.edu)
- * Date: 07-24-22  (Due: 07-24-22)
- * Desc: Using sockets to read from files and write into new files.
- */
+/* *********************************************
+   Author: Danny Brokke (dannybrokke@live.com)
+   *********************************************
+*/
 
 /* Including all necessary libraries
 */
@@ -40,6 +39,7 @@ int i;
 unsigned short int port;
 int fileCount;
 int counter;
+
 /* Signal interruption handler function for when the interruption is called
 */
 void SIGINT_handler(int sig)
@@ -146,8 +146,8 @@ int main( int argc, char* argv[] )
         /*
         * Sending bytes and keeping track fo how many were sent.
         */
-            printf("client: Sending: \"%s\"...\n", argv[fileCount+2]);
-            bytes_sent = send(sockfd, (const void *) out_buf, 1024, 0);
+        printf("client: Sending: \"%s\"...\n", argv[fileCount+2]);
+        bytes_sent = send(sockfd, (const void *) out_buf, 1024, 0);
         
 
         
@@ -183,19 +183,6 @@ void cleanup(void)
         sockfd = -1;
     }
 
-    /*
-    if(cl_sa_size > 0)
-    {
-        free((void *) &cl_sa_size);
-        cl_sa_size = 0;
-    }
-    
-    if(cl_sa != NULL)
-    {
-        free(cl_sa);
-        cl_sa = NULL;
-    }
-    */
     exit(EXIT_SUCCESS);
 }
 
