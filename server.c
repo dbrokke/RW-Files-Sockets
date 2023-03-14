@@ -1,12 +1,11 @@
-/*
- * Auth: Danny Brokke (dbrokke@unomaha.edu)
- * Date: 07-24-22  (Due: 07-24-22)
- * Course: CSCI-3550 (Sec: 850)
+/* *******************************************************************
+ * Author: Danny Brokke (dannybrokke@live.com)
  * Desc:  Using sockets to read from files and write into new files.
+ * *******************************************************************
  */
 
-/* Including all necessary libraries
-*/
+// Including all necessary libraries
+
 #include<signal.h>
 #include<stdio.h>
 #include<stdlib.h>
@@ -19,12 +18,12 @@
 #include <arpa/inet.h>
 #include <string.h>
 
-/* Cleanup function prototype, required by the compiler
-*/
+// Cleanup function prototype, required by the compiler
+
 void cleanup(void);
 
-/* Defining global variables to be used
-*/
+// Defining global variables to be used
+
 #define BUF_SIZE (100*1024*1024)
 char* buf = NULL;
 ssize_t bytes_read;
@@ -40,8 +39,8 @@ int i;
 unsigned short int port;
 char fname[80];
 
-/* Signal interruption handler function for when the interruption is called
-*/
+// Signal interruption handler function for when the interruption is called
+
 void SIGINT_handler(int sig)
 {
     fprintf(stderr, "\nserver: Server interrupted. Shutting down.\nGoodbye!\n");
@@ -208,12 +207,7 @@ int main( int argc, char* argv[] )
         printf("server: Saving file: \"%s\"\n", fname);
         printf("server: done\n\n"); 
     }
-    /*
-    if (sockfd > -1)
-    {
-        close(sockfd);
-        sockfd = -1;
-    } */
+
     
 }
 
